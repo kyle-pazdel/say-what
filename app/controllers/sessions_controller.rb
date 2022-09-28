@@ -21,6 +21,6 @@ class SessionsController < ApplicationController
 
   private
     def set_user
-      User.find_by(:email)
+      User.find_by(email: params[:email])
     end
 end
