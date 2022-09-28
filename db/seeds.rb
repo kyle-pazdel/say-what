@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+
+# User Seeds
 User.create(
   name: "john",
   email: "john@test.com",
@@ -20,4 +22,18 @@ User.create(
   password_confirmation: "password"
 )
 
+User.create(
+  name: "kyle",
+  email: "kyle@test.com",
+  password: "password",
+  password_confirmation: "password"
+)
 
+22.times do
+  User.create(
+    name: FFaker::Name.name,
+    email: FFaker::Internet.safe_email,
+    password: "password",
+    password_confirmation: "password"
+  )
+end
