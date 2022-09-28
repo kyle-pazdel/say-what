@@ -5,8 +5,14 @@ class MessagesController < ApplicationController
 
   def index
     @messages = @conversation.messages
-
+    if @messaages.last 
+      if @messages.last.user_id != current_user.id
+        @messages.last.read = true
+      end
+    end
     render template: conversation_messages_path
+
+    @message = conversation.messages.new
   end
     
   def new
@@ -28,7 +34,7 @@ class MessagesController < ApplicationController
 
     private
       def set_conversation
-        Conversation.find(params[:conversation_id])
+        @conversation = Conversation.find(params[:conversation_id])
       end
 
       def message_params

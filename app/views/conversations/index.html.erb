@@ -1,4 +1,4 @@
-<h1>Your Conversations</h1>
+<h1>Your Mailbox</h1>
 
 <div>
   <% @conversations.each do |conversation| %>
@@ -13,4 +13,13 @@
     <% end %>
 </div>
 
- 
+ <div>
+  <%@users.each do |user|%>
+    <%if user.id != current_user.id%>
+      <div>
+        <%= user.name%>
+        <%= link_to "Send Message", conversations_path(sender_id: current_user.id, recipient_id: user.id), method: "post"%>
+      </div>
+    <%end%>
+  <%end%>
+ </div>
