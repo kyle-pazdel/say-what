@@ -1,0 +1,25 @@
+<%= form_with method: "post", url: "/sessions" do |form|%>
+   
+  
+  <div>
+    <h3>Login</h3>
+  </div>
+  <div>
+    <div>
+      <%= form.label :email, class: "form-label"%>
+      <%= form.text_field :email, class:"ms-3"%>
+    </div>
+
+    <div>
+      <%= form.label :password%>
+      <%= form.password_field :password%>
+    </div>
+
+    <div>
+      <%= form.submit "Submit", class: "btn btn-primary"%>
+    </div>
+  </div>
+  <div class="text-center">
+  <p>Not a user? <%= link_to "Sign Up", "/signup"%></p>
+
+<% end %>
