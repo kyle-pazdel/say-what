@@ -19,3 +19,4 @@ class UsersController < ApplicationController
       require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 end
+
