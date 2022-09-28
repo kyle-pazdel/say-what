@@ -8,9 +8,10 @@ Rails.application.routes.draw do
   
 
   # Defines the root path route ("/")
-  # root "conversations#index"
+  root "conversations#index"
 
   # User Routes
+  get "users" => "users#index"
   get "/signup" => "users#new"
   post "/users" => "users#create"
 

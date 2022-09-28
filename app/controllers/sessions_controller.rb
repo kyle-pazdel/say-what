@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to "/"
     else
+      flash[:alert] = "Email/password combination is invalid"
       redirect_to "/login"
     end
   end

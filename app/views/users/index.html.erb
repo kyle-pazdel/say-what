@@ -1,0 +1,12 @@
+ <h1>All Users</h1>
+ 
+ <div>
+  <%@users.each do |user|%>
+    <%if user.id != current_user.id%>
+      <div>
+        <%= user.name%>
+        <%= link_to "Send Message", conversations_path, method: "post"%>
+      </div>
+    <%end%>
+  <%end%>
+ </div>

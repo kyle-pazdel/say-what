@@ -1,0 +1,8 @@
+<h1>Coversation with <%=@conversation.recipient.name%></h1>
+
+<% @messages.each do |message|%>
+  <%if message.body%>
+    <% user = User.find(message.user_id)%>
+    <%= message.body%>
+  <%end%>
+<%end%>

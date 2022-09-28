@@ -12,7 +12,7 @@ class MessagesController < ApplicationController
     end
     render template: conversation_messages_path
 
-    @message = conversation.messages.new
+    @message = @conversation.messages.new
   end
     
   def new
@@ -22,7 +22,7 @@ class MessagesController < ApplicationController
   def create
     @message = @conversation.messages.new(message_params)
     if @message.save
-      format.html { redirect_to conversation_messages_path, notice: "Mesage sent!" }
+      format.html { redirect_to conversation_messages_path, notice: "Message sent!" }
       format.json { render :show, status: :created, location: @message }
     else
       format.html { render :new, notice: "Message failed to send", status: :unprocessable_entity }
