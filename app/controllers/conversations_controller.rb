@@ -6,9 +6,6 @@ class ConversationsController < ApplicationController
     @conversations = Conversation.all
   end
 
-  # def new
-  # end
-
   def create
     if Conversation.find_by({sender_id: params[:sender_id]} && {recipient_id: params[:recipient_id]}).present?
       @conversation = Conversation.find_by({sender_id: params[:sender_id]} && {recipient_id: params[:recipient_id]})
