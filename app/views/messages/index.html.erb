@@ -1,8 +1,12 @@
-<h1>Coversation with <%=@conversation.recipient.name%></h1>
+<h1>Coversation with <%=@conversation.recipient.name.capitalize!%></h1>
 
 <% @messages.each do |message|%>
   <%if message.body%>
     <% user = User.find(message.user_id)%>
+    <%= user.name.capitalize!%>
+    <%= message.message_time%>
     <%= message.body%>
   <%end%>
 <%end%>
+<%= render "form"%>
+<%= link_to "Back to conversations", conversations_path%>
