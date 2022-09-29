@@ -8,7 +8,9 @@
       <% else %>
         <% recipient = User.find(conversation.sender_id) %>
       <% end %>
-      <%= link_to recipient.name.capitalize!,   conversation_messages_path(conversation)%>
+      <div>Conversation With:
+        <%= link_to recipient.name.capitalize!,   conversation_messages_path(conversation)%>
+      </div>
     <% end %>
   <% end %>
 </div>

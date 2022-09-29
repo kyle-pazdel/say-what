@@ -1,11 +1,15 @@
-<h1>Coversation with <%=@conversation.recipient.name.capitalize!%></h1>
+<h1>Coversation</h1>
 
 <% @messages.each do |message|%>
   <%if message.body%>
-    <% user = User.find(message.user_id)%>
-    <%= user.name.capitalize!%>
-    <%= message.message_time%>
-    <%= message.body%>
+    <div>
+      <%= message.body%>
+    </div>
+    <div>
+      <% user = User.find(message.user_id)%>
+      <%= user.name.capitalize!%>
+      <%= "at #{message.message_time}"%>
+    </div>
   <%end%>
 <%end%>
 <%= render "form"%>
