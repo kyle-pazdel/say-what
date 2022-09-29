@@ -28,13 +28,30 @@
       </div>
 
 
-    <div class="col-sm-6 bg-primary">
+    <div class="col-sm-6 mid bg-primary">
+      <script>
+          $(document).ready(function() {
+              $("button").click(function() {
+                  $(document).scrollTop($(document).height(9999));
+              });
+          });
+      </script>
       <%if @conversation%>
-        <%= render @conversation%>
-        <%= render "messages/form"%>
+        <% if @conversation.sender_id != current_user.id%>
+          <% other_user = @conversation.sender.name%>
+        <%else%>
+          <% other_user = @conversation.recipient.name%>
+        <%end%>
+        <div class="sticky-top">
+          <h3><%= other_user%></h3>
+        </div>
         <%= link_to "Delete this conversation", conversation_path(@conversation), data: {
           turbo_method: :delete, turbo_confirm: "Are you sure?"},
           class: "btn btn-large btn-secondary" %>
+        <%= render @conversation%>
+        <div class="sticky-bottom">
+          <%= render "messages/form"%>
+        </div>
       <%else%>
         <div class="fst-italic">Click on a user to start a conversation...</div>
       <%end%>

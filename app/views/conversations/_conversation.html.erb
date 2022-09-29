@@ -1,9 +1,3 @@
-<% if conversation.sender_id != current_user.id%>
-  <% @other_user = conversation.sender.name%>
-<%else%>
-  <% @other_user = conversation.recipient.name%>
-<%end%>
-<h3>Conversation with <%= @other_user%> </h3>
   <% conversation.messages.each do |message|%>
     <%if message.body%>
       <div>
