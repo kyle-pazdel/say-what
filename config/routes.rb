@@ -10,9 +10,7 @@ Rails.application.routes.draw do
   root "conversations#index"
 
   # User Routes
-  get "users" => "users#index"
-  get "/signup" => "users#new"
-  post "/users" => "users#create"
+  resources :users
 
   # Sessions Routes
   get "/login" => "sessions#new"

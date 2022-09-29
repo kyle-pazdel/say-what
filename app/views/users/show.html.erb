@@ -1,0 +1,15 @@
+<p>
+  <strong>Image data:</strong>
+  <%= image_tag @user.image_url if @user.image %>
+  <%= @user.name%>
+</p>
+
+<%= render @user %>
+
+<div>
+  <%= link_to "Back to users", users_path %> |
+  <%= edit_user(@user) %>
+
+  <%= destroy_user(@user) %>
+</div>
+
