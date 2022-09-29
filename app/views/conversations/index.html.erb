@@ -1,29 +1,48 @@
-<h1>Your Mailbox</h1>
 
-<div>
-  <% @conversations.each do |conversation| %>
-    <% if conversation.sender_id == current_user.id || conversation.recipient_id == current_user.id %>
-        
-      <% if conversation.sender_id == current_user.id %>
-        <% recipient = User.find(conversation.recipient_id) %>
-      <% else %>
-        <% recipient = User.find(conversation.sender_id) %>
-      <% end %>
-      <%unless !conversation.messages.last%>
-        <% if conversation.messages.last.read == false && conversation.messages.last.user_id != current_user.id%>
-          <div>Conversation With:
-            <strong><%= link_to recipient.name,   conversation_messages_path(conversation)%></strong>
-          </div>
-          <%else%>
-          <div>Conversation With:
-          <%= link_to recipient.name,   conversation_messages_path(conversation)%>
-          </div>
-        <%end%>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 bg-warning">
+      <h1>Your Mailbox</h1>
+        <div>
+          <% @conversations.each do |conversation| %>
+            <% if conversation.sender_id == current_user.id || conversation.recipient_id == current_user.id %>
+                
+              <% if conversation.sender_id == current_user.id %>
+                <% recipient = User.find(conversation.recipient_id) %>
+              <% else %>
+                <% recipient = User.find(conversation.sender_id) %>
+              <% end %>
+              <%unless !conversation.messages.last%>
+                <% if conversation.messages.last.read == false && conversation.messages.last.user_id != current_user.id%>
+                  <div>Conversation With:
+                    <strong><%= link_to recipient.name, {controller: "conversations", action: "index", id: conversation.id}, class: "btn btn-large btn-primary"%></strong>
+                  </div>
+                  <%else%>
+                    <div>Conversation With:
+                    <%= link_to recipient.name, {controller: "conversations", action: "index", id: conversation.id}, class: "btn btn-large btn-primary"%>
+                  </div>
+                <%end%>
+              <%end%>
+            <% end %>
+          <% end %>
+        </div>
+
+        <div>
+          <%= link_to "See all users", users_path %>
+        </div>
+      </div>
+
+
+    <div class="col-sm-6 bg-primary">
+      <p>My Conversations will go here</p>
+      <%if @conversation%>
+        <%= render @conversation%>
+        <%= render "messages/form"%>
       <%end%>
-    <% end %>
-  <% end %>
-</div>
+    </div>
 
-<div>
-  <%= link_to "See all users", users_path %>
+    <div class="col-sm-3 bg-secondary">
+      <p>Users will go here</p>
+    </div>
+  </div>
 </div>
