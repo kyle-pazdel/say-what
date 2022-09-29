@@ -9,27 +9,27 @@
 
 # User Seeds
 User.create(
-  name: "john",
+  name: "John Doe",
   email: "john@test.com",
   password: "password",
   password_confirmation: "password"
 )
 
 User.create(
-  name: "jane",
+  name: "Jane Doe",
   email: "jane@test.com",
   password: "password",
   password_confirmation: "password"
 )
 
 User.create(
-  name: "kyle",
+  name: "Kyle Pazdel",
   email: "kyle@test.com",
   password: "password",
   password_confirmation: "password"
 )
 
-22.times do
+47.times do
   User.create(
     name: FFaker::Name.name,
     email: FFaker::Internet.safe_email,

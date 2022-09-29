@@ -8,7 +8,7 @@
   <%@users.each do |user|%>
     <%if user.id != current_user.id%>
       <div>
-        <%= user.name.capitalize!%>
+        <%= user.name%>
         <%= button_to "Send Message", {controller: "conversations", action: "create", sender_id: current_user.id, recipient_id: user.id}, class: "btn btn-large btn-primary"%>
       </div>
     <%end%>

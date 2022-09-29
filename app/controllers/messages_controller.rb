@@ -5,9 +5,9 @@ class MessagesController < ApplicationController
 
   def index
     @messages = @conversation.messages
-    if @messages.last 
+    unless !@messages.last 
       if @messages.last.user_id != current_user.id
-        @messages.last.read = true
+        @messages.last.update(read: true)
       end
     end
 

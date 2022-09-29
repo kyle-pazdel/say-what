@@ -7,7 +7,7 @@
     </div>
     <div>
       <% user = User.find(message.user_id)%>
-      <%= user.name.capitalize!%>
+      <%= user.name%>
       <%= "at #{message.message_time}"%>
     </div>
   <%end%>
