@@ -1,7 +1,7 @@
 
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-3 bg-warning">
+  <div class="row row-height">
+    <div class="col-sm-3 left bg-warning">
       <h3>Your Mailbox</h3>
         <div>
           <% @conversations.each do |conversation| %>
@@ -40,7 +40,7 @@
       <%end%>
     </div>
 
-    <div class="col-sm-3 bg-secondary">
+    <div class="col-sm-3 right bg-secondary">
       <h3>Users</h3>
       <div>
         <%@users.each do |user|%>
