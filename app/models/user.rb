@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
+  include ImageUploader::Attachment(:image)
   validates :email, presence: true, uniqueness: true
   validates :name, presence: true, uniqueness: true
 
