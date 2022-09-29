@@ -2,11 +2,10 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-3 bg-warning">
-      <h1>Your Mailbox</h1>
+      <h3>Your Mailbox</h3>
         <div>
           <% @conversations.each do |conversation| %>
             <% if conversation.sender_id == current_user.id || conversation.recipient_id == current_user.id %>
-                
               <% if conversation.sender_id == current_user.id %>
                 <% recipient = User.find(conversation.recipient_id) %>
               <% else %>
@@ -15,7 +14,7 @@
               <%unless !conversation.messages.last%>
                 <% if conversation.messages.last.read == false && conversation.messages.last.user_id != current_user.id%>
                   <div>Conversation With:
-                    <strong><%= link_to recipient.name, {controller: "conversations", action: "index", id: conversation.id}, class: "btn btn-large btn-primary"%></strong>
+                    <%= link_to recipient.name, {controller: "conversations", action: "index", id: conversation.id}, class: "btn btn-large btn-success "%>
                   </div>
                   <%else%>
                     <div>Conversation With:
@@ -26,23 +25,34 @@
             <% end %>
           <% end %>
         </div>
-
-        <div>
-          <%= link_to "See all users", users_path %>
-        </div>
       </div>
 
 
     <div class="col-sm-6 bg-primary">
-      <p>My Conversations will go here</p>
       <%if @conversation%>
         <%= render @conversation%>
         <%= render "messages/form"%>
+        <%= link_to "Delete this conversation", conversation_path(@conversation), data: {
+          turbo_method: :delete, turbo_confirm: "Are you sure?"},
+          class: "btn btn-large btn-secondary" %>
+      <%else%>
+        <div class="fst-italic">Click on a user to start a conversation...</div>
       <%end%>
     </div>
 
     <div class="col-sm-3 bg-secondary">
-      <p>Users will go here</p>
+      <h3>Users</h3>
+      <div>
+        <%@users.each do |user|%>
+          <%if user.id != current_user.id%>
+            <div>
+              <%= link_to "#{user.name}", user%>
+              <%= button_to "Send Message", {controller: "conversations", action: "create", sender_id: current_user.id, recipient_id: user.id}, class: "btn btn-large btn-primary"%>
+            </div>
+          <%end%>
+        <%end%>
+      </div>
     </div>
   </div>
 </div>
+
