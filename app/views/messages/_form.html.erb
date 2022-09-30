@@ -1,10 +1,11 @@
 <%= form_for [@conversation, @conversation.messages.build] do |f| %>
- <div class=”field”>
-   <%= f.text_area :body%>
- 
- </div>
-  <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
- <div>
-   <%= f.submit "Send"%>
- </div>
+  <div class="row mb-2"">
+    <div class = "col-8">
+      <%= f.text_area :body, class: "form-control", id: "button-addon2"%>
+    </div>
+      <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
+    <div class="col-4">
+      <%= f.submit "Send", class: "btn btn-secondary", id: "button-addon2"%>
+    </div>
+  </div>
 <% end %>

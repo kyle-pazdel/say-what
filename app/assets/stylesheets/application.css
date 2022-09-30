@@ -42,3 +42,11 @@
   width: 0px;
   background: transparent;
 }
+
+textarea.form-control {
+  color: #737aaa;
+}
+
+.form-control:focus {
+  background: #8584bf;
+}
