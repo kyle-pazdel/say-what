@@ -1,37 +1,39 @@
 <%= form_with model: @user do |form| %>
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-    <% @user.errors.full_messages_for(:name).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-  <div>
-    <%= form.label :email %>
-    <%= form.email_field :email %>
-    <% @user.errors.full_messages_for(:email).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-  <div>
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-    <% @user.errors.full_messages_for(:password).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-  <div>
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation %>
-    <% @user.errors.full_messages_for(:password_confirmation).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-  <div>
- <%= form.label :image %>
- <%= form.file_field :image %>
-  </div>
-  <div>
-    <%= form.submit %>
+  <div class="container d-flex flex-column align-items-center bg-light p-5 opacity-75">
+    <div>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+      <% @user.errors.full_messages_for(:name).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+    <div class="mb-2">
+      <%= form.label :email %>
+      <%= form.email_field :email %>
+      <% @user.errors.full_messages_for(:email).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+    <div>
+      <%= form.label :password %>
+      <%= form.password_field :password %>
+      <% @user.errors.full_messages_for(:password).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+    <div>
+      <%= form.label :password_confirmation %>
+      <%= form.password_field :password_confirmation %>
+      <% @user.errors.full_messages_for(:password_confirmation).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+    <div>
+  <%= form.label :image %>
+  <%= form.file_field :image %>
+    </div>
+    <div>
+      <%= form.submit %>
+    </div>
   </div>
 <% end %>

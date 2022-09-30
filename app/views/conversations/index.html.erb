@@ -3,7 +3,7 @@
   <div class="row row-height">
     <div class="col-sm-3 left bg-secondary">
       
-        <div class="shadow p-3 mb-5 mt-4 bg-secondary rounded">
+        <div class="shadow p-3 mb-5 mt-0 bg-secondary rounded">
           <h3 class="text-light m-3">Your Mailbox</h3>
           <div class="input-group">
             <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
@@ -22,7 +22,7 @@
                   <div class="card mb-1 bg-dark bg-opacity-75 text-light" style="max-width: 540px;">
                       <div class="row g-0">
                         <div class="col-md-4">
-                          <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png" class="img-fluid rounded-start" alt="blank user image">
+                          <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png" class="pt-1 pb-1 rounded-circle img-fluid" alt="blank user image">
                         </div>
                         <div class="col-md-8">
                           <div class="card-body">
@@ -57,30 +57,30 @@
       </div>
 
 
-    <div class="no-pad col-sm-6 mid bg-secondary">
+    <div class="col-sm-6 mt-0 mid bg-dark bg-opacity-50">
       <%if @conversation%>
         <% if @conversation.sender_id != current_user.id%>
           <% other_user = @conversation.sender.name%>
         <%else%>
           <% other_user = @conversation.recipient.name%>
         <%end%>
-        <div class="row sticky-top bg-success p-2 text-white bg-opacity-75">
+        <div class="row sticky-top bg-dark bg-opacity-50 p-2 text-white bg-opacity-75">
           <div class="col"><h3><%= other_user%></h3></div>
           <div class="col"><%= link_to "Delete this conversation", conversation_path(@conversation), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-sm btn-secondary" %></div>
         </div>
         <div class="h-100 d-inline-block p-4">
           <%= render @conversation%>
         </div>
-        <div class="row sticky-bottom bg-success p-2 text-white bg-opacity-75">
+        <div class="row sticky-bottom bg-dark bg-opacity-50 p-2 text-white bg-opacity-75">
           <%= render "messages/form"%>
         </div>
       <%else%>
-        <div class="fst-italic text-center mt-5">Click on a user to start a conversation...</div>
+        <div class="fst-italic text-white-50 text-center mt-5">Click on a user to start a conversation...</div>
       <%end%>
     </div>
 
 
-    <div class="col-sm-3 right shadow p-3 mb-5 mt-4 bg-secondary rounded">
+    <div class="col-sm-3 right shadow p-3 mb-5 mt-0 bg-secondary rounded">
       <div>
         <h3 class="text-light m-3 pb-3 border-bottom">Online Users</h3>
         <div class="shadow bg-secondary">
