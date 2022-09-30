@@ -1,9 +1,9 @@
 
 <div class="container-fluid">
   <div class="row row-height">
-    <div class="col-sm-3 left bg-warning">
+    <div class="col-sm-3 left bg-secondary">
       <h3>Your Mailbox</h3>
-        <div>
+        <div class="shadow p-3 mb-5 bg-secondary rounded">
           <% @conversations.each do |conversation| %>
             <% if conversation.sender_id == current_user.id || conversation.recipient_id == current_user.id %>
               <% if conversation.sender_id == current_user.id %>
@@ -28,7 +28,7 @@
       </div>
 
 
-    <div class="no-pad col-sm-6 mid bg-primary">
+    <div class="no-pad col-sm-6 mid bg-secondary">
       <%if @conversation%>
         <% if @conversation.sender_id != current_user.id%>
           <% other_user = @conversation.sender.name%>
