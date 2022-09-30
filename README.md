@@ -1,6 +1,6 @@
 # SayWhat
 
-![alt text](https://github.com/[kyle-pazdel]/[say-what]/blob/[main]/dashboard.png?raw=true)
+![Dashboard screenshot](https://raw.githubusercontent.com/kyle-pazdel/say-what/main/app/assets/images/dashboard.png)
 
 SayWhat is simple messaging app running with Ruby 3.1.1 on Rails 7.0.4 that allows users to create profiles and send messages to eachother on one dashboard style page.
 
