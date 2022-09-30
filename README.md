@@ -1,24 +1,33 @@
-# README
+# SayWhat
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![alt text](https://github.com/[kyle-pazdel]/[say-what]/blob/[main]/dashboard.png?raw=true)
 
-Things you may want to cover:
+SayWhat is simple messaging app running with Ruby 3.1.1 on Rails 7.0.4 that allows users to create profiles and send messages to eachother on one dashboard style page.
 
-* Ruby version
+## Installation
 
-* System dependencies
+This app is currently in development, but can be cloned and run on a local server.
 
-* Configuration
+navigate to your desired directory and use command
+```bash
+  git clone https://github.com/kyle-pazdel/say-what.git
+```
+then bundle install all dependencies with
+```bash
+  bundle install
+```
 
-* Database creation
+run the following commands to create a rails database, migrate.
+```bash
+  rails db:create
 
-* Database initialization
+  rails db:migrate
+```
 
-* How to run the test suite
+### Features
+• User create and destroy
+• User profile updates including avatar image saved to db via the shrine app
+• User authentication
+• Users can send and receive messages to eachother
+• Users can destroy conversations
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
