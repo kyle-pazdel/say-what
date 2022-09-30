@@ -1,12 +1,15 @@
   <% conversation.messages.each do |message|%>
     <%if message.body%>
       <div>
-        <%= message.body%>
+          <div class="message-box mt-4 mb-0">
+            <div class="text-light fs-5">
+              <%= message.body%>
+            </div>
+          </div>
       </div>
-      <div>
-        <% user = User.find(message.user_id)%>
-        <%= user.name%>
-        <%= "at #{message.message_time}"%>
+      <div class= "pl-3 text-light" style="font-size: small">
+          <% user = User.find(message.user_id)%>
+          <p class="fs-6"><%= user.name%> <%=message.message_time%></p>
       </div>
     <%end%>
   <%end%>
