@@ -72,3 +72,37 @@ textarea.form-control {
   height: 56px;
   padding: 10px;
 }
+
+.cu-msg {
+  background-color: #007bff;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end
+}
+
+.ou-msg {
+  background-color: #637095;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start
+}
+
+.inbox-bg {
+  background: #372c51;
+}
+
+.pallete{
+  background-color: #372c51;
+  background-color: #637095;
+  background-color: #737aaa;
+  background-color: #8584bf;
+  background-color: #9e95d5; 
+  background-color: #b8a6ea;
+  background-color: #d3b8fd;
+  background-color: #c5bbff;
+  background-color: #bfc6ff;
+  background-color: #bfc6ff;
+  background-color: #c8edff;
+  background-color: #cdfeff;
+  background-color: #d3ffff'
+}

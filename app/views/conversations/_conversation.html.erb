@@ -1,15 +1,32 @@
   <% conversation.messages.each do |message|%>
-    <%if message.body%>
-      <div>
-          <div class="message-box shadow rounded mt-4 mb-0">
-            <div class="text-light fs-5">
-              <%= message.body%>
+    
+    <%if message.user_id == current_user.id%>
+          <%if message.body%>
+            <div class="">
+                <div class="cu-msg message-box shadow rounded mt-4 mb-0">
+                  <div class="text-light fs-5">
+                    <%= message.body%>
+                  </div>
+                </div>
             </div>
-          </div>
-      </div>
-      <div class= "pl-3 text-light" style="font-size: small">
-          <% user = User.find(message.user_id)%>
-          <p class="fs-6"><%= user.name%> <%=message.message_time%></p>
-      </div>
+            <div class= "pl-3 text-light" style="font-size: small">
+                <% user = User.find(message.user_id)%>
+                <p class="fs-6"><%= user.name%> <%=message.message_time%></p>
+            </div>
+          <%end%>
+    <%else%>
+        <%if message.body%>
+            <div class="">
+                <div class="os-msg message-box shadow rounded mt-4 mb-0">
+                  <div class="text-light fs-5">
+                    <%= message.body%>
+                  </div>
+                </div>
+            </div>
+            <div class= "pl-3 text-light" style="font-size: small">
+                <% user = User.find(message.user_id)%>
+                <p class="fs-6"><%= user.name%> <%=message.message_time%></p>
+            </div>
+          <%end%>
     <%end%>
   <%end%>
