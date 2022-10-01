@@ -79,6 +79,12 @@ textarea.form-control {
   padding: 10px;
 }
 
+.no-resize {
+  resize: none;
+  height: 5em;
+  width: 25%;
+}
+
 .cu-msg {
   background-color: #007bff;
   padding: 10px;
