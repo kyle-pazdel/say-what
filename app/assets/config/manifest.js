@@ -2,3 +2,15 @@
 //= link_directory ../stylesheets .css
 //= link_tree ../../javascript .js
 //= link_tree ../../../vendor/javascript .js
+//= link bootstrap.bundle.js
+//= link bootstrap.bundle.js.map
+//= link bootstrap.bundle.min.js
+//= link bootstrap.bundle.min.js.map
+//= link bootstrap.esm.js
+//= link bootstrap.esm.js.map
+//= link bootstrap.esm.min.js
+//= link bootstrap.esm.min.js.map
+//= link bootstrap.js
+//= link bootstrap.js.map
+//= link bootstrap.min.js
+//= link bootstrap.min.js.map

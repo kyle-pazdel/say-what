@@ -1,7 +1,7 @@
 <%= form_for [@conversation, @conversation.messages.build] do |f| %>
   <div class="row mb-2"">
     <div class = "col-8">
-      <%= f.text_area :body, class: "form-control", id: "button-addon2"%>
+      <%= f.text_field :body, class: "form-control", id: "button-addon2"%>
     </div>
       <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
     <div class="col-4">

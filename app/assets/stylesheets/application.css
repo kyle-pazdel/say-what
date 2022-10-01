@@ -91,6 +91,10 @@ textarea.form-control {
   background: #372c51;
 }
 
+textarea {
+  resize: none;
+}
+
 .palette{
   background-color: #372c51;
   background-color: #637095;
@@ -98,11 +102,76 @@ textarea.form-control {
   background-color: #8584bf;
   background-color: #9e95d5; 
   background-color: #b8a6ea;
+
   background-color: #d3b8fd;
+
   background-color: #c5bbff;
   background-color: #bfc6ff;
   background-color: #bfc6ff;
   background-color: #c8edff;
   background-color: #cdfeff;
-  background-color: #d3ffff'
+  background-color: #d3ffff
+}
+
+
+
+/* ***************************************************** */
+
+{ box-sizing: border-box; margin: 0; padding: 0; }
+nav {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  right: 0;  
+  border: 1px solid red;
+  height: 175px;
+  -webkit-transition: all 500ms ease-out;
+  -moz-transition: all 500ms ease-out;
+  -o-transition: all 500ms ease-out;
+  transition: all 500ms ease-out;
+}
+nav:hover, nav.toggleNav {
+  top: 0px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #a137a7;
+  font-family: 'Source Sans Pro', sans-serif;
+  opacity: .8;
+}
+li {
+  float: left;
+}
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+/* Hover color */
+
+li a:hover {
+  background-color: #732878;
+}
+.footer {
+  color: #fff;
+  clear: both;
+  margin: 0em 0em 0em 0em;
+  padding: 0.70em 0.75em;
+  background: #000;
+  font-family: 'Source Sans Pro', sans-serif;
+  top: 490px;
+  border-top: 1px solid #000;
+  opacity: .7;
+}
+.hover {
+  width: 50px;
+  height: 50px;
+  background: lightblue;
+  margin-top: 200px;
 }
