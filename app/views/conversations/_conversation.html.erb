@@ -2,14 +2,14 @@
     
     <%if message.user_id == current_user.id%>
           <%if message.body%>
-            <div class="">
+            <div class="d-flex justify-content-end">
                 <div class="cu-msg message-box shadow rounded mt-4 mb-0">
                   <div class="text-light fs-5">
                     <%= message.body%>
                   </div>
                 </div>
             </div>
-            <div class= "pl-3 text-light" style="font-size: small">
+            <div class= "pl-3 text-light d-flex justify-content-end message-cont" style="font-size: small">
                 <% user = User.find(message.user_id)%>
                 <p class="fs-6"><%= user.name%> <%=message.message_time%></p>
             </div>

@@ -88,15 +88,11 @@ textarea.form-control {
 .cu-msg {
   background-color: #007bff;
   padding: 10px;
-  display: flex;
-  justify-content: flex-end
 }
 
 .ou-msg {
   background-color: #637095;
   padding: 10px;
-  display: flex;
-  justify-content: flex-start
 }
 
 .inbox-bg {
