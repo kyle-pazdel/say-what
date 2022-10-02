@@ -1,0 +1,20 @@
+ <div class="col-sm-3 right shadow p-3 mb-5 mt-0 bg-secondary rounded">
+      <div>
+        <h3 class="text-light m-3 pb-3 border-bottom">Online Users</h3>
+        <div class="shadow bg-secondary">
+          <%turbo_stream_from "users"%>
+          <div class="row mt-1 card-body bg-secondary" id="users">
+            <%@users.each do |user|%>
+              <%if user.id != current_user.id%>
+                <div class="col-6">
+                  <a class="text-decoration-none link-light" href="/users/<%=user.id%>"><%=user.name%></a>
+                </div>
+                <div class="col-6">
+                  <%= button_to "Send Message", {controller: "conversations", action: "create", sender_id: current_user.id, recipient_id: user.id}, class: "btn btn-sm btn-secondary"%>
+                </div>
+              <%end%>
+            <%end%>
+          </div>
+        </div>         
+      </div>
+    </div>
