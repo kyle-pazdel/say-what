@@ -1,0 +1,18 @@
+ <div class="col-sm-3 right shadow p-3 mb-5 mt-0 bg-secondary rounded">
+      <div>
+        <h3 class="text-light m-3 pb-3 border-bottom">User Profile</h3>
+        <p><%= @user.name%></p>
+        <p>
+          <strong>Image data:</strong>
+          <%= image_for(@user, 300, 300)%>
+        </p>
+        
+        <div>
+
+        <%= link_to "Back to Mailbox", conversations_path %>
+        <%= edit_user(@user) %>
+
+        <%= destroy_user(@user) %>
+      </div>
+      </div>
+    </div>

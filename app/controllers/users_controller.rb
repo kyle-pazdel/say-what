@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user, except: [:new, :create]
-  before_action :set_user, only: %i[ show edit update destroy ]
+  before_action :set_user, only: %i[ show index edit update destroy ]
 
   def show
     @user = User.find(params[:id])
