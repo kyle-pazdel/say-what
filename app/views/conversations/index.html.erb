@@ -58,8 +58,8 @@
         </div>
       </div>
 
-    <%turbo_stream_from "conversations"%>
-    <div class="col-sm-6 mt-0 mid bg-dark bg-opacity-50" id="conversations">
+    
+    <div class="col-sm-6 mt-0 mid bg-dark bg-opacity-50" >
       <%if @conversation%>
         <% if @conversation.sender_id != current_user.id%>
           <% other_user = @conversation.sender.name%>
@@ -74,7 +74,8 @@
             </div>
           </div>
         </div>
-        <div class="h-100 d-inline-block p-4">
+        <%turbo_stream_from "conversation"%>
+        <div class="h-100 d-inline-block p-4" id="conversation">
           <%= render @conversation%>
         </div>
         <div class="row sticky-bottom bg-dark bg-opacity-50 p-2 pt-3 pb-3 text-white bg-opacity-75">
@@ -90,7 +91,7 @@
       <h3 class="text-light m-3 pb-3 border-bottom">Online Users</h3>
       <div class="shadow bg-secondary">
         <div class="row mt-1 card-body bg-secondary">
-          <%turbo_stream_from "users"%>
+          <% turbo_stream_from "users"%>
           <div id="users">
             <%= render @users%>
           </div>

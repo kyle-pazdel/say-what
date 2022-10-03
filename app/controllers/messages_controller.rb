@@ -1,11 +1,11 @@
 class MessagesController < ApplicationController
-  before_action do 
+  before_action do
     @conversation = Conversation.find(params[:conversation_id])
   end
 
   def index
     @messages = @conversation.messages
-    unless !@messages.last 
+    unless !@messages.last
       if @messages.last.user_id != current_user.id
         @messages.last.update(read: true)
       end
@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
 
     @message = @conversation.messages.new
   end
-    
+
   def new
     @message = @conversation.messages.new
   end
@@ -25,10 +25,9 @@ class MessagesController < ApplicationController
     end
   end
 
+  private
 
-
-    private
-      def message_params
-        params.require(:message).permit(:body, :user_id)
-      end
+  def message_params
+    params.require(:message).permit(:body, :user_id)
+  end
 end
