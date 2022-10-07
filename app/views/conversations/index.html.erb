@@ -59,14 +59,14 @@
       </div>
 
     
-    <div class="col-sm-6 mt-0 mid bg-dark bg-opacity-50" >
+    <div class="col-sm-6 mt-0 mid bg-dark bg-opacity-50" id="conversation" data-controller="scroll">
       <%if @conversation%>
         <% if @conversation.sender_id != current_user.id%>
           <% other_user = @conversation.sender.name%>
         <%else%>
           <% other_user = @conversation.recipient.name%>
         <%end%>
-        <div class="row sticky-top bg-dark bg-opacity-50 p-2 text-white bg-opacity-75">
+        <div class="row sticky-top bg-dark bg-opacity-50 p-2 text-white bg-opacity-75" id="message-header">
           <div class="col"><h3><%= other_user%></h3></div>
           <div class="col d-flex justify-content-end">
             <div>
@@ -74,8 +74,8 @@
             </div>
           </div>
         </div>
-        <%turbo_stream_from "conversation"%>
-        <div class="h-100 d-inline-block p-4" id="conversation">
+        <%turbo_stream_from "@conversation"%>
+        <div class="h-100 d-inline-block p-4">
           <%= render @conversation%>
         </div>
         <div class="row sticky-bottom bg-dark bg-opacity-50 p-2 pt-3 pb-3 text-white bg-opacity-75">

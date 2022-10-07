@@ -15,7 +15,7 @@
  */
 
  * {
-  -ms-overflow-style: none !important;
+  /* -ms-overflow-style: none !important; */
 }
 
 body {
