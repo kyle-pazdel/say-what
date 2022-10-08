@@ -2,7 +2,7 @@
 <div class="container-fluid mh-75">
 
   <div class="row row-height p-0 m-0">
-    <div class="col-sm-3 left bg-secondary">
+    <div class="col-sm-3 scroll-col bg-secondary">
       
         <div class="shadow p-3 mb-5 mt-0 bg-secondary rounded">
           <h3 class="text-light m-3">Your Mailbox</h3>
@@ -59,14 +59,14 @@
       </div>
 
     
-    <div class="col-sm-6 mt-0 mid bg-dark bg-opacity-50" id="conversation" data-controller="scroll">
+    <div class="col-sm-6 mt-0 scroll-col bg-dark bg-opacity-50" id="conversation" data-controller="scroll">
       <%if @conversation%>
         <% if @conversation.sender_id != current_user.id%>
           <% other_user = @conversation.sender.name%>
         <%else%>
           <% other_user = @conversation.recipient.name%>
         <%end%>
-        <div class="row sticky-top bg-dark bg-opacity-50 p-2 text-white bg-opacity-75" id="message-header">
+        <div class="row sticky-top bg-dark zindex-sticky bg-opacity-50 p-2 text-white bg-opacity-75" id="message-header">
           <div class="col"><h3><%= other_user%></h3></div>
           <div class="col d-flex justify-content-end">
             <div>
@@ -87,7 +87,7 @@
     </div>
 
   
-    <div class="col-sm-3 right shadow p-3 mb-5 mt-0 bg-secondary rounded">
+    <div class="col-sm-3 scroll-col shadow p-3 mb-5 mt-0 bg-secondary rounded">
       <h3 class="text-light m-3 pb-3 border-bottom">Online Users</h3>
       <div class="shadow bg-secondary">
         <div class="row mt-1 card-body bg-secondary">

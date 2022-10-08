@@ -20,8 +20,9 @@ export default class extends Controller {
     const navbar = document.getElementById("navbar");
     conversation.scrollTop = conversation.scrollHeight - conversation.clientHeight;
     console.log(conversation.offsetHeight);
+    console.log(conversation.clientHeight);
     console.log(conversation.scrollHeight);
-    console.log(messageHeader.offsetHeight);
+    console.log(messageHeader.clientHeight);
     console.log(navbar.offsetHeight);
   }
 }
