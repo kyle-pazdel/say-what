@@ -4,7 +4,7 @@
       <a class="text-decoration-none link-light" href="/users/<%=user.id%>"><%=user.name%></a>
     </div>
     <div class="col-6">
-      <%= button_to "Send Message", {controller: "conversations", action: "create", sender_id: current_user.id, recipient_id: user.id}, class: "btn btn-sm btn-secondary"%>
+      <%= button_to "Send Message", {controller: "conversations", action: "index", sender_id: current_user.id, recipient_id: user.id}, class: "btn btn-sm btn-secondary"%>
     </div>
   <%end%>
 </div>
